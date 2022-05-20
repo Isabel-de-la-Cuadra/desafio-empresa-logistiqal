@@ -43,7 +43,7 @@ public class ProductService {
 	}
 	
 	public List<Product> searchProducts (String search){
-		return productRepository.findProductsByExactName(search);
+		return productRepository.findProductsByPartialName(search);
 	}
 	
 	public Page<Product> getPage(Pageable pageable){

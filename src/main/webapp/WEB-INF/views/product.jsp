@@ -4,7 +4,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-
 <jsp:include page='../templates/header.jsp'>
 	<jsp:param name='title' value='Registro Producto:' />
 </jsp:include>
@@ -45,7 +44,6 @@
 							<form:errors path="code" class="text-danger" />
 						</div>
 
-
 						<div class="mb-3">
 							<form:input type="text" class="form-control" path="name"
 								placeholder="Ingresa el nombre del producto" />
@@ -79,8 +77,6 @@
 			</div>
 		</div>
 	</div>
-
-
 
 	<br>
 	<br>

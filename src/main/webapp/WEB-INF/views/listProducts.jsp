@@ -5,7 +5,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-
 <jsp:include page='../templates/header.jsp'>
 	<jsp:param name='title' value='Listar Productos:' />
 </jsp:include>
@@ -23,6 +22,22 @@
 		<div class="text-center">
 			<h1>Listado de Productos</h1>
 		</div>
+
+		<br>
+
+		<c:if test="${msgError !=null}">
+			<div class="alert alert-danger" role="alert">
+				<c:out value="${msgError}"></c:out>
+			</div>
+		</c:if>
+
+		<c:if test="${msgOk !=null}">
+			<div class="alert alert-success" role="alert">
+				<c:out value="${msgOk}"></c:out>
+			</div>
+		</c:if>
+
+		<br>
 
 		<div class="table-responsive">
 			<table class="table">
@@ -69,15 +84,16 @@
 			<div class="row">
 				<div class="col-md-2"></div>
 				<h4 class="fs-6 fst-italic">(Hay ${totalElements} registros)</h4>
-				<h4 class="fs-6 fst-italic">(Los mostraré de a ${size} registros)</h4>
+				<h4 class="fs-6 fst-italic">(Los mostraré de a ${size}
+					registros)</h4>
 				<div class="col-md-8">
 					<nav aria-label="Pagination">
-					<h4 class="fs-5">Para pasar de página tienes que apretar el botón</h4>
+						<h4 class="fs-5">Para pasar de página tienes que apretar el
+							botón</h4>
 						<ul class="pagination pagination-lg justify-content-center">
-							<c:forEach begin="0" end="${totalPages-1}" var="page">
-								<li class="page-item">
-									<a class="page-link" href="list?page=${page}&size=${size}">${page+1}</a>
-								</li>
+							<c:forEach begin="1" end="${totalPages}" var="page">
+								<li class="page-item"><a class="page-link"
+									href="list?page=${page}&size=${size}">${page}</a></li>
 							</c:forEach>
 						</ul>
 					</nav>
@@ -90,32 +106,14 @@
 	<br>
 	<br>
 
-<!-- 
-<ul class="pagination pagination-lg justify-content-center">
-				<c:forEach items="${paginas}" var="pagina">
-					<li class="page-item ${paginaActual == pagina ? 'disabled' : ''}">
-					<a class="page-link" href="home?p=${pagina}" tabindex="-1">${pagina}</a></li>
-				</c:forEach>
-			</ul>
- -->
-
-
-	<!-- <c:forEach items="${pages}" var="pages">
-									<li class="page-item ${pages == pages ? 'disabled' : ''}">
-									<a class="page-link" href="listProducts?p=${pages}" tabindex="-1">${pages}</a></li>
-								</c:forEach> -->
-
-
 	<jsp:include page='../templates/footer.jsp'>
 		<jsp:param name='title' value='Sistema Web Empresa Logistiqal' />
 	</jsp:include>
-
 
 	<!-- Bootstrap Bundle with Popper -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js ">
 	</script>
-
 
 </body>
 </html>

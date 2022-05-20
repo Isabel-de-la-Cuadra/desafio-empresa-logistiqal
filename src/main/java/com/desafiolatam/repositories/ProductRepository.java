@@ -10,8 +10,8 @@ import com.desafiolatam.models.Product;
 
 public interface ProductRepository extends JpaRepository<Product, Long>, PagingAndSortingRepository<Product, Long>{
 	
-	@Query(value="SELECT * FROM EmpresaLogistiqal.products elp WHERE elp.name = ?1", nativeQuery=true)
-	List<Product> findProductsByExactName(String name);
+	@Query(value="SELECT * FROM EmpresaLogistiqal.products elp WHERE elp.name LIKE "+"%"+"?1"+"%", nativeQuery=true)
+	List<Product> findProductsByPartialName(String name);
 	
 	@Query(value="SELECT * FROM EmpresaLogistiqal.products elp WHERE elp.name = ?1", nativeQuery=true)
 	Product findProductByExactName(String name);

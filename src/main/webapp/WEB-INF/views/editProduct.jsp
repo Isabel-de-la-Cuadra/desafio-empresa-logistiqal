@@ -5,7 +5,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-
 <jsp:include page='../templates/header.jsp'>
 	<jsp:param name='title' value='Editar Producto:' />
 </jsp:include>
@@ -25,8 +24,7 @@
 				<div class="card-body p-3">
 					<h1 class="fs-4 card-title mb-2">Formulario de Actualización
 						de Productos</h1>
-						<h4 class="fs-6 fst-italic">(Solo puedes modificar el precio y el stock)</h4>
-
+						
 					<c:if test="${msgError !=null}">
 						<div class="alert alert-danger" role="alert">
 							<c:out value="${msgError}"></c:out>
@@ -47,30 +45,27 @@
 							<form:label class="mb-1 text-muted" path="code">
 									Reingresa el código del Producto</form:label>
 							<form:input type="text" class="form-control" path="code" />
-							<form:errors path="code" class="text-danger" />
+							<form:errors path="code" class="text-danger"/>
 						</div>
 
 						<div class="mb-3">
 							<form:label class="mb-1 text-muted" path="name">
 									Reingresa el nombre del Producto</form:label>
-							<form:input type="text" class="form-control" path="name"
-								placeholder="Ingresa el nombre del producto" />
+							<form:input type="text" class="form-control" path="name"/>
 							<form:errors path="name" class="text-danger" />
 						</div>
 
 						<div class="mb-3">
 							<form:label class="mb-1 text-muted" path="price">
 									Reingresa el precio del Producto</form:label>
-							<form:input type="number" class="form-control" path="price"
-								placeholder="Ingresa el precio del producto" />
+							<form:input type="number" class="form-control" path="price"/>
 							<form:errors path="price" class="text-danger" />
 						</div>
 
 						<div class="mb-3">
 							<form:label class="mb-1 text-muted" path="stock">
 									Reingresa el stock del Producto</form:label>
-							<form:input type="number" class="form-control" path="stock"
-								placeholder="Ingresa el stock del producto" />
+							<form:input type="number" class="form-control" path="stock"/>
 							<form:errors path="stock" class="text-danger" />
 						</div>
 
@@ -98,12 +93,10 @@
 		<jsp:param name='title' value='Sistema Web Empresa Logistiqal' />
 	</jsp:include>
 
-
 	<!-- Bootstrap Bundle with Popper -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js ">
 	</script>
-
 
 </body>
 </html>
